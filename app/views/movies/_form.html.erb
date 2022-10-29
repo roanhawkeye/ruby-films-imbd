@@ -1,53 +1,9 @@
-<%= form_with model: movie do |form| %>
-  <div>
-    <%= form.label :imdb_id %><br>
-    <%= form.text_field :imdb_id %>
-    <% movie.errors.full_messages_for(:imdb_id).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-    <% movie.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.label :rating %><br>
-    <%= form.number_field :rating %>
-    <% movie.errors.full_messages_for(:rating).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.label :rank %><br>
-    <%= form.number_field :rank %>
-    <% movie.errors.full_messages_for(:rank).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.label :year %><br>
-    <%= form.number_field :year %>
-    <% movie.errors.full_messages_for(:year).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.label :data %><br>
-    <%= form.text_area :data %>
-    <% movie.errors.full_messages_for(:data).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+<%= simple_form_for movie do |f| %>
+  <%= f.input :imdb_id %>
+  <%= f.input :title %>
+  <%= f.input :rating %>
+  <%= f.input :rank %>
+  <%= f.input :year %>
+  <%= f.input :data %>
+  <%= f.button :submit, class: "btn-primary" %>
 <% end %>
