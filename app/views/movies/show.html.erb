@@ -1,0 +1,16 @@
+<h1>Movie Details</h1>
+
+<p>Imdb_id: <%= @movie.imdb_id %></p>
+<p>Title: <%= @movie.title %></p>
+<p>Rating: <%= @movie.rating %></p>
+<p>Rank: <%= @movie.rank %></p>
+<p>Year: <%= @movie.year %></p>
+<p>data: <%= @movie.data %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_movie_path(@movie) %></li>
+  <li><%= link_to "Destroy", movie_path(@movie), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>

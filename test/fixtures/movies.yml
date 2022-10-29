@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  imdb_id: MyString
+  title: MyString
+  rating: 9.99
+  rank: 1
+  year: 1
+  data: 
+
+two:
+  imdb_id: MyString
+  title: MyString
+  rating: 9.99
+  rank: 1
+  year: 1
+  data: 
