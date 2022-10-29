@@ -46,6 +46,8 @@ gem 'simple_form'
 
 gem 'bootstrap', '~> 5.2.2'
 
+gem 'dry-monads'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
