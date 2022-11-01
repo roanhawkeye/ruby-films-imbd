@@ -48,6 +48,14 @@ gem 'bootstrap', '~> 5.2.2'
 
 gem 'dry-monads'
 
+gem 'rubocop', require: false
+
+gem "brakeman"
+
+gem 'rubocop-rails', require: false
+
+gem "rubycritic", require: false
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

@@ -1,5 +1,7 @@
-class UsersController < ApplicationController
+# frozen_string_literal: true
 
+# Controller to handle the user request
+class UsersController < ApplicationController
   def index
     @users = User.all
   end
@@ -44,8 +46,8 @@ class UsersController < ApplicationController
   end
 
   private
-    def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :role, :password)
-    end
 
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :role, :password)
+  end
 end

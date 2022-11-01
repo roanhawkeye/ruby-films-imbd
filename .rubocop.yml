@@ -1,0 +1,18 @@
+require: rubocop-rails
+
+AllCops:
+  Exclude:
+    - other/mentoring-task/design_patterns_task_1.rb
+    - db/schema.rb
+    - db/seeds.rb
+    - config/**/**
+    - test/**/**
+    - bin/**
+    - Gemfile
+    - Rakefile
+    - config.*
+    - app/helpers/**
+    - db/migrate/**
+    - app/channels/**/**
+    - app/mailers/**
+    - app/jobs/**

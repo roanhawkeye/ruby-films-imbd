@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Controller to handle the moview request
 class MoviesController < ApplicationController
   def index
     @movies = Movie.all
@@ -43,7 +46,8 @@ class MoviesController < ApplicationController
   end
 
   private
-   def movie_params
+
+  def movie_params
     params.require(:movie).permit(:imdb_id, :title, :rating, :rank, :year, :data)
-   end
+  end
 end
