@@ -16,11 +16,7 @@ class UserForm
 
   def submit
     return false if invalid?
-    @user.first_name = @first_name,
-    @user.last_name = @last_name,
-    @user.email = @email,
-    @user.role = @role,
-    @user.password = @password,
+    @user.assign_attributes(first_name: @first_name, last_name: @last_name, email: @email, role: @role, password: @password)
     @user.save
   end
 end
