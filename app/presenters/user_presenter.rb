@@ -1,11 +1,5 @@
-class UserPresenter
-  attr_reader :user
-
-  def initialize(user)
-    @user = user
-  end
-
+class UserPresenter < SimpleDelegator
   def full_name
-    "#{@user.first_name} #{@user.last_name}"
+    "#{first_name} #{last_name}"
   end
 end
