@@ -1,13 +1,13 @@
-<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<h1><%= @presenter.full_name %></h1>
 
-<p>First Name: <%= @user.first_name %></p>
-<p>Last Name: <%= @user.last_name %></p>
-<p>Email: <%= @user.email %></p>
-<p>Role: <%= @user.role %></p>
+<p>First Name: <%= @presenter.first_name %></p>
+<p>Last Name: <%= @presenter.last_name %></p>
+<p>Email: <%= @presenter.email %></p>
+<p>Role: <%= @presenter.role %></p>
 
 <ul>
-  <li><%= link_to "Edit", edit_user_path(@user) %></li>
-  <li><%= link_to "Destroy", user_path(@user), data: {
+  <li><%= link_to "Edit", edit_user_path(@presenter) %></li>
+  <li><%= link_to "Destroy", user_path(@presenter), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %></li>

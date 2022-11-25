@@ -7,18 +7,18 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @presenter = UserPresenter.new(User.find(params[:id]))
   end
 
   def new
-    @user = User.new
+    @form = UserForm.new
   end
 
   def create
-    @user = User.new(user_params)
+    @form = UserForm.new(user_form_params)
 
-    if @user.save
-      redirect_to @user
+    if @form.submit
+      redirect_to users_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -47,7 +47,12 @@ class UsersController < ApplicationController
 
   private
 
-  def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :role, :password)
+  def user_form_params
+    params.require(:user_form).permit(:first_name, :last_name, :role, :password, :email)
   end
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :role, :password, :email)
+  end
+
 end
