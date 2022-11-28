@@ -58,8 +58,6 @@ gem "rubycritic", require: false
 
 gem 'rails_best_practices', '~> 1.23', '>= 1.23.2'
 
-gem 'bullet', '~> 6.1'
-
 # Use Sass to process CSS
 # gem "sassc-rails"
 
