@@ -10,55 +10,58 @@ describe '#index', type: :request do
 end
 
 describe '#create', type: :request do
-  context 'when valid' do
-    before do
-      post '/users', params: { user_form: {
+
+  def send_post_request
+    post '/users', params: { user_form: {
         first_name: 'Daniel',
         last_name: 'Martinez',
         role: 'Admin',
         password: 'password',
         email: 'sample@sample.com'
       } }
-    end
-
-    it { expect(response).to have_http_status(302) }
-
-    it 'increase users count' do
-      expect do
-        post '/users', params: { user_form: {
-          first_name: 'Daniel',
-          last_name: 'Martinez',
-          role: 'Admin',
-          password: 'password',
-          email: 'sample@sample.com'
-        } }
-      end.to change { User.count }.by(1)
-    end
   end
 
-  context 'when not valid' do
-    before do
-      post '/users', params: { user_form: {
-        first_name: 'Daniel',
-        last_name: 'Martinez',
-        role: '',
-        password: '',
-        email: 'sample@sample.com'
-      } }
+  context 'when validate the model user' do
+
+    context 'when attributes are present' do
+      it 'does increase users count' do
+        expect do
+          send_post_request
+        end.to change { User.count }.by(1)
+        expect(response).to have_http_status(302)
+      end
     end
 
-    it { expect(response).to have_http_status(:unprocessable_entity) }
+    context 'when Role is empty' do
+      it 'does not increase User count' do
+        expect do
+          post '/users', params: { user_form: {
+            first_name: 'Daniel',
+            last_name: 'Martinez',
+            role: '',
+            password: '',
+            email: 'sample@sample.com'
+          } }
+        end.to change { User.count }.by(0)
+        expect(response).to have_http_status(:unprocessable_entity)
+      end
+    end
 
-    it 'does not increase User count' do
-      expect do
-        post '/users', params: { user_form: {
-          first_name: 'Daniel',
-          last_name: 'Martinez',
-          role: '',
-          password: '',
-          email: 'sample@sample.com'
-        } }
-      end.to change { User.count }.by(0)
+    context 'when Password is empty' do
+      it 'does not increase User count' do
+        expect do
+          post '/users', params: { user_form: {
+            first_name: 'Daniel',
+            last_name: 'Martinez',
+            role: '',
+            password: '',
+            email: 'sample@sample.com'
+          } }
+        end.to change { User.count }.by(0)
+        expect(response).to have_http_status(:unprocessable_entity)
+      end
     end
   end
+  
+
 end
