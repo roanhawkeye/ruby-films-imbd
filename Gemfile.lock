@@ -84,9 +84,6 @@ GEM
       sassc-rails (>= 2.0.0)
     brakeman (5.3.1)
     builder (3.2.4)
-    bullet (6.1.5)
-      activesupport (>= 3.0.0)
-      uniform_notifier (~> 1.11)
     capybara (3.37.1)
       addressable
       matrix
@@ -336,7 +333,6 @@ GEM
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.3.0)
-    uniform_notifier (1.16.0)
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -366,7 +362,6 @@ DEPENDENCIES
   bootsnap
   bootstrap (~> 5.2.2)
   brakeman
-  bullet (~> 6.1)
   capybara
   debug
   dry-monads
