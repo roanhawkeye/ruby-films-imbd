@@ -56,6 +56,8 @@ gem 'rubocop-rails', require: false
 
 gem "rubycritic", require: false
 
+gem 'rails_best_practices', '~> 1.23', '>= 1.23.2'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -86,4 +88,5 @@ group :test do
   gem "rspec-rails"
   gem "factory_bot_rails"
   gem "faker"
+  gem 'simplecov'
 end
