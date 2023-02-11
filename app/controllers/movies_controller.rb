@@ -45,6 +45,11 @@ class MoviesController < ApplicationController
     redirect_to movies_path, status: :see_other
   end
 
+  def top
+    MovieFetcher.call
+    redirect_to movies_path
+  end
+
   private
 
   def movie_params
