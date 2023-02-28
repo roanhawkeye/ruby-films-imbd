@@ -60,6 +60,8 @@ gem 'rails_best_practices', '~> 1.23', '>= 1.23.2'
 
 gem 'httparty'
 
+gem 'jwt'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

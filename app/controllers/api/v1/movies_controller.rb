@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 # Controller to handle the moview request
-class Api::V1::MoviesController < ApplicationController
+class Api::V1::MoviesController < Api::V1::ApplicationController
+
   def index
     @movies = Movie.all
     render json: @movies
