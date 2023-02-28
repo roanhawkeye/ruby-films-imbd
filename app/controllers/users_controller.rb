@@ -2,6 +2,8 @@
 
 # Controller to handle the user request
 class UsersController < ApplicationController
+  before_action :authenticate_admin!, only: [:create, :update, :destroy]
+
   def index
     @users = User.all
   end

@@ -13,4 +13,6 @@
 <%= link_to "New Movie", new_movie_path, class: "btn btn-outline-success btn-sm" %>
 <br/>
 <br/>
-<%= link_to "Get Most Popular Movies", top_movies_path, class: "btn btn-primary" %>
+<% if admin_signed_in? %>
+  <%= link_to "Get Most Popular Movies", top_movies_path, class: "btn btn-primary" %>
+<% end %>

@@ -62,6 +62,8 @@ gem 'httparty'
 
 gem 'jwt'
 
+gem 'devise'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

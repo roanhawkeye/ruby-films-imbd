@@ -23,6 +23,12 @@ describe '#create', type: :request do
 
   context 'when validate the model user' do
 
+    def setup
+      sign_in FactoryBot.create(:admin)
+    end
+
+    before { setup }
+
     context 'when attributes are present' do
       it 'does increase users count' do
         expect do
