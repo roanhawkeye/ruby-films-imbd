@@ -8,8 +8,14 @@ class Api::V1::MoviesController < ApplicationController
   end
 
   def show
-    @movie = Movie.find(params[:id])
-    render json: @movie
+
+    begin
+      @movie = Movie.find(params[:id])
+      render json: @movie
+    rescue
+      render json: {status: "ERROR", message: "Movie could not be found"}, status: :bad_request
+    end
+    
   end
 
   def new
