@@ -12,6 +12,12 @@ end
 describe '#create', type: :request do
   context 'when validate the model movie' do
 
+    def setup
+      sign_in FactoryBot.create(:admin)
+    end
+
+    before { setup }
+
     def send_post_request
       post '/movies', params: { movie: {
         imdb_id: 'some_imdb_id',

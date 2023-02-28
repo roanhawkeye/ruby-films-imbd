@@ -20,3 +20,11 @@ FactoryBot.define do
     data { Faker::Json.shallow_json(width: 3, options: { key: 'Name.first_name', value: 'Name.last_name' }) }
   end
 end
+
+FactoryBot.define do
+  factory :admin do
+    email { Faker::Internet.email }
+    password { "password"} 
+    password_confirmation { "password" }
+  end
+end
