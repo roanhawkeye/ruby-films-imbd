@@ -2,6 +2,7 @@
 
 # Controller to handle the moview request
 class Api::V1::MoviesController < Api::V1::ApplicationController
+  before_action :authenticate_admin!, only: [:create, :update, :destroy]
 
   def index
     @movies = Movie.all
