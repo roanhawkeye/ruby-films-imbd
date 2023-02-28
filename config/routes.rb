@@ -3,8 +3,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root 'users#index'
+  root 'movies#index'
 
   resources :users
-  resources :movies
+  resources :movies do 
+    collection do
+      get 'top'
+    end
+  end
+
 end
