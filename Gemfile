@@ -64,6 +64,8 @@ gem 'jwt'
 
 gem 'devise'
 
+gem 'sidekiq'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
