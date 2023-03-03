@@ -1,0 +1,4 @@
+SyncMoviesJob:
+  description: "We want this job to update movies database"
+  interval: ["1m"]
+  queue: default

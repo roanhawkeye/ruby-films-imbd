@@ -64,6 +64,10 @@ gem 'jwt'
 
 gem 'devise'
 
+gem 'sidekiq'
+
+gem 'sidekiq-scheduler'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
