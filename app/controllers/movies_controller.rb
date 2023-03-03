@@ -48,7 +48,7 @@ class MoviesController < ApplicationController
   end
 
   def top
-    MovieFetcher.call
+    SyncMoviesJob.perform_now
     redirect_to movies_path
   end
 
