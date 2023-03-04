@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Api::V1::ApplicationController < ActionController::API
-  before_action :require_jwt
+  #before_action :require_jwt
 
   def require_jwt
     token = request.headers["HTTP_AUTHORIZATION"]
