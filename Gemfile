@@ -68,6 +68,8 @@ gem 'sidekiq'
 
 gem 'sidekiq-scheduler'
 
+gem "actionpack-page_caching"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

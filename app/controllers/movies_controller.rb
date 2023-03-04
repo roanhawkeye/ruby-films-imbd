@@ -3,6 +3,7 @@
 # Controller to handle the moview request
 class MoviesController < ApplicationController
   before_action :authenticate_admin!, only: [:create, :update, :destroy]
+  caches_page :index
 
   def index
     @movies = Movie.all

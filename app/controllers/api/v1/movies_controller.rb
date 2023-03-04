@@ -9,6 +9,13 @@ class Api::V1::MoviesController < Api::V1::ApplicationController
     render json: @movies
   end
 
+  def search_by_imdb_id
+    movie = Rails.cache.fetch("movies/#{params[:id]}/search_by_imdb_id", expires_in: 12.hours) do
+        Movie.find_by(imdb_id: params[:id])
+    end  
+    render json: movie
+  end
+
   def show
 
     begin
